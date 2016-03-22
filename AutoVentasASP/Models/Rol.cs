@@ -16,7 +16,7 @@ namespace AutoVentasASP.Models
         [Display(Name = "Descripcion")]
         [Required(ErrorMessage = "El campo descripción es obligatorio.")]
         public String descripcion { get; set; }
-        public virtual List<Usuario> usuarios { get, set;}
+        public virtual List<Usuario> usuarios { get; set; }
 
     }
 }
