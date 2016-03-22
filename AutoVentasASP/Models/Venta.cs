@@ -21,4 +21,3 @@ namespace AutoVentasASP.Models
         public virtual Automovil automovil {get; set;}
         }
     }
-}
