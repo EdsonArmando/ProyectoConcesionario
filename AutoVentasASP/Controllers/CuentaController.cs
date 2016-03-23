@@ -63,9 +63,14 @@ namespace AutoVentasASP.Controllers
             {
                 return RedirectToAction("Login");
             }
-            return View();
         }
 
+        public ActionResult Logout()
+        {
+            Session.Remove("IDUsuario");
+            Session.Remove("nombreUsuario");
+            return RedirectToAction("Login");
+        }
 
     }
 }
