@@ -1,9 +1,9 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "IndexUsua";
 }
 
-<h2>Menu Administrador</h2>
+<h2>Menu Usuario</h2>
 @if (Session["nombreUsuario"] != null)
 {
     <h2>Bienvenido @Session["nombreUsuario"]</h2>
@@ -14,21 +14,19 @@ else
 }
 
 
+   
             @if (Session["IDUsuario"] != null)
             {
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li>@Html.ActionLink("DASHBOARD", "Index", "Home")</li>
+                        <li>@Html.ActionLink("DASHBOARD", "IndexUsua", "Home")</li>
+                        <li>@Html.ActionLink("Compras", "IndexUsua", "Home")</li>
                         <li role="presentation" class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="8" role="button" aria-haspopup="true" aria-expanded="false">
                                 @Session["nombreUsuario"] <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <li>@Html.ActionLink("Logout", "Logout", "Cuenta")</li>
-                                <li>@Html.ActionLink("usuarios", "Index", "Home")</li>
-                                <li>@Html.ActionLink("compras", "Index", "Home")</li>
-                                <li>@Html.ActionLink("ventas", "Index", "Home")</li>
-                                <li>@Html.ActionLink("reportes", "Index", "Home")</li>
                             </ul>
                         </li>
                     </ul>

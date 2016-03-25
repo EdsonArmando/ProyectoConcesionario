@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Menu Usuario</h2>
+@if (Session["nombreUsuario"] != null)
+{
+    <h2>Bienvenido @Session["nombreUsuario"]</h2>
+}
+else
+{
+    <h2>Debe de iniciar sesion</h2>
+}
+
+

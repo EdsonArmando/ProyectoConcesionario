@@ -13,5 +13,10 @@ namespace AutoVentasASP.Controllers
         {
             return View();
         }
+        public ActionResult IndexUsua()
+        {
+            return View();
+        }
+
     }
 }

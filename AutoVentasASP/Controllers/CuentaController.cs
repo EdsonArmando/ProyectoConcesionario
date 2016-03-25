@@ -20,8 +20,11 @@ namespace AutoVentasASP.Controllers
         [HttpPost]
         public ActionResult Login(Usuario usuario)
         {
+            Rol rol = db.rol.FirstOrDefault(r => r.idRol == 1);
+            Rol rolUsuario = db.rol.FirstOrDefault(r => r.idRol == 2);
+            usuario.rol = rol;
             var usr = db.usuario.FirstOrDefault(u => u.correo == usuario.correo && u.contraseña == usuario.contraseña);
-            if (usr !=null)
+            if (usr !=null && usr.rol == rol)
             {
                 Session["nombreUsuario"] = usr.nombre;
                 Session["idUsuario"] = usr.idUsuario;
@@ -29,7 +32,15 @@ namespace AutoVentasASP.Controllers
             }
             else
             {
-                ModelState.AddModelError("","Verifica tus credenciales");
+                if (usr != null && usr.rol == rolUsuario)
+                {
+                 Session["nombreUsuario"] = usr.nombre;
+                 Session["idUsuario"] = usr.idUsuario;
+                 return VerificarSesionUsuario();
+                }
+                else {
+                    ModelState.AddModelError("", "Verifica tus credenciales");
+                }
             }
             return View();
         }
@@ -51,13 +62,25 @@ namespace AutoVentasASP.Controllers
                 ViewBag.mensaje = "El usuario " + usuario.nombre + " Fue registrado satisfactoriamente.";
                 ModelState.Clear();
             }
-            return View();
+            return RedirectToAction("Login");
         }
         public ActionResult VerificarSesion()
         {
             if (Session["idUsuario"]!=null)
             {
                 return RedirectToAction("../Home/Index");
+            }
+            else
+            {
+                return RedirectToAction("Login");
+            }
+        }
+
+        public ActionResult VerificarSesionUsuario()
+        {
+            if (Session["idUsuario"] != null)
+            {
+                return RedirectToAction("../Home/IndexUsua");
             }
             else
             {
