@@ -1,7 +1,4 @@
-﻿@model AutoVentasASP.Models.Rol
-
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -22,9 +19,26 @@
                 </button>
                 @Html.ActionLink("AutoVentas", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-           
-
-           
+@if (Session["IDUsuario"] != null)
+            {
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+            <li>@Html.ActionLink("Usuario", "Index", "Usuario")</li>
+            <li>@Html.ActionLink("compras", "Index", "Home")</li>
+            <li>@Html.ActionLink("ventas", "Index", "Home")</li>
+            <li>@Html.ActionLink("reportes", "Index", "Home")</li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>@Html.ActionLink("Salir", "Logout", "Cuenta")</li>
+            <li>
+                <a>
+                    @Session["nombreUsuario"]
+                </a>
+            </li>
+        </ul>
+    </div> 
+             }          
         </div>
     </div>
 

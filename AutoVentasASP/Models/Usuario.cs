@@ -31,6 +31,7 @@ namespace AutoVentasASP.Models
         [Required(ErrorMessage = "El campo contraseña es obligatorio.")]
         [Compare("contraseña", ErrorMessage = "Las contraseñas no coinciden")]
         public String compararContraseña { get; set; }
+        public int idRol { get; set; }
         public virtual Rol rol { get; set; }
 
     }

@@ -130,12 +130,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CuentaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201603231650178_db_concesionario.cs" />
-    <Compile Include="Migrations\201603231650178_db_concesionario.Designer.cs">
-      <DependentUpon>201603231650178_db_concesionario.cs</DependentUpon>
+    <Compile Include="Migrations\201603252345588_db_concesionario.cs" />
+    <Compile Include="Migrations\201603252345588_db_concesionario.Designer.cs">
+      <DependentUpon>201603252345588_db_concesionario.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Archivo.cs" />
@@ -160,8 +161,12 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Cuenta\Registro.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\IndexUsuario.cshtml" />
     <Content Include="Views\Home\IndexUsua.cshtml" />
+    <Content Include="Views\Usuario\Create.cshtml" />
+    <Content Include="Views\Usuario\Delete.cshtml" />
+    <Content Include="Views\Usuario\Details.cshtml" />
+    <Content Include="Views\Usuario\Edit.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -173,8 +178,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201603231650178_db_concesionario.resx">
-      <DependentUpon>201603231650178_db_concesionario.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201603252345588_db_concesionario.resx">
+      <DependentUpon>201603252345588_db_concesionario.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
