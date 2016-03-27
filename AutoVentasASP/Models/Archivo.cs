@@ -14,6 +14,7 @@ namespace AutoVentasASP.Models
         public String contentType { get; set; }
         public FileType tipo { get; set; }
         public byte[] contenido { get; set; }
+        public int idAutomovil { get; set; }
         public virtual Automovil automovil { get; set; }
     }
 }

@@ -20,6 +20,8 @@ namespace AutoVentasASP.Controllers
             return View(db.automovil.ToList());
         }
 
+      
+
         // GET: Automovil/Details/5
         public ActionResult Details(int? id)
         {

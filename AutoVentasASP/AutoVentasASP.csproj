@@ -135,9 +135,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201603270056172_db_concesionario.cs" />
-    <Compile Include="Migrations\201603270056172_db_concesionario.Designer.cs">
-      <DependentUpon>201603270056172_db_concesionario.cs</DependentUpon>
+    <Compile Include="Migrations\201603270356507_db_concesionario.cs" />
+    <Compile Include="Migrations\201603270356507_db_concesionario.Designer.cs">
+      <DependentUpon>201603270356507_db_concesionario.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Archivo.cs" />
@@ -184,8 +184,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201603270056172_db_concesionario.resx">
-      <DependentUpon>201603270056172_db_concesionario.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201603270356507_db_concesionario.resx">
+      <DependentUpon>201603270356507_db_concesionario.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
