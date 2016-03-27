@@ -1,0 +1,52 @@
+﻿@model IEnumerable<AutoVentasASP.Models.Automovil>
+
+@{
+    ViewBag.Title = "Automoviles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Automoviles</h2>
+
+<p>
+    @Html.ActionLink("Ingresar nuevo auto", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.marca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.modelo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.color)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.marca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.modelo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.color)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precio)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.idAutomovil }) |
+            @Html.ActionLink("Detailles", "Details", new { id=item.idAutomovil }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.idAutomovil })
+        </td>
+    </tr>
+}
+
+</table>

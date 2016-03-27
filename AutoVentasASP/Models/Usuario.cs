@@ -17,6 +17,7 @@ namespace AutoVentasASP.Models
         [Required(ErrorMessage = "El campo apellido es obligatorio.")]
         public String apellido { get; set; }
         [Display(Name = "Correo"),DataType (DataType.EmailAddress)]
+        [Required(ErrorMessage = "El campo correo es obligatorio.")]
         public String correo { get; set; }
         [Display(Name = "Direccion")]
         [Required(ErrorMessage = "El campo direccion es obligatorio.")]

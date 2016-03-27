@@ -12,9 +12,9 @@
 </p>
 <table class="table">
     <tr>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.rol.nombre)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.nombre)
         </th>
@@ -30,20 +30,23 @@
         <th>
             @Html.DisplayNameFor(model => model.nick)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.contraseña)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.compararContraseña)
+        </th>*@
+        <th>
+            Rol
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.rol.nombre)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.nombre)
         </td>
@@ -59,16 +62,19 @@
         <td>
             @Html.DisplayFor(modelItem => item.nick)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.contraseña)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.compararContraseña)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.rol.nombre)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idUsuario }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idUsuario }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idUsuario })
+            @Html.ActionLink("Editar", "Edit", new { id=item.idUsuario }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.idUsuario }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.idUsuario })
         </td>
     </tr>
 }
